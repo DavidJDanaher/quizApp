@@ -10,7 +10,11 @@
             templateUrl: './components/question-widget/question-widget.template.html',
             controller: 'QuizQuestionViewController',
             controllerAs: 'questionVm',
-            scope: {}
+            scope: {},
+            bindToController: {
+                index: '=',
+                questionJson: '='
+            }
         }
     }
 }(angular));

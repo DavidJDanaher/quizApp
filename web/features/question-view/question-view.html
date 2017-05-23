@@ -1,5 +1,6 @@
 <div>
     Question view {{ questionVm.message }}
 </div>
-<div ng-repeat="questionObj in questionVm.questions">{{questionObj.question}}</div>
-<question-widget></question-widget>
+<div ng-repeat="questionObj in questionVm.questions">
+    <question-widget index=$index question-json=questionObj></question-widget>
+</div>

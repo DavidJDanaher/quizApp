@@ -25,7 +25,8 @@
                 "type":"TRUE_FALSE",
                 "level":3,
                 "question":"Superman�s high-school girlfriend was named Lana Lang.",
-                "answers":["Fact","Fiction"],"correct":1
+                "answers":["Fact","Fiction"],
+                "correct":1
                 ,"explanation":"Clark Kent was in love with Lana Lang. Then he went to Metropolis and fell in love with Lois Lane, the ace newspaper reporter."
             },{
                 "type":"TRUE_FALSE",
