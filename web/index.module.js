@@ -1,5 +1,7 @@
 (function (angular) {
     'use strict';
 
-    angular.module('quiz.app', []); 
+    angular.module('quiz.app', [
+        'quiz.app.services'
+    ]);
 }(angular));

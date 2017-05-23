@@ -7,7 +7,7 @@
     function quizQuestionView() {
         return {
             restrict: 'E',
-            templateUrl: './question-view.html',
+            templateUrl: '/web/features/question-view/question-view.html',
             controller: 'QuizQuestionViewController',
             controllerAs: 'questionVm',
             scope: {}

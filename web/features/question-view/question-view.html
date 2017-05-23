@@ -1,3 +1,4 @@
 <div>
-    {{ questionVm.message }}
+    Question view {{ questionVm.message }}
 </div>
+<div ng-repeat="questionObj in questionVm.questions">{{questionObj.question}}</div>
