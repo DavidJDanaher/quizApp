@@ -6,14 +6,16 @@
     </head>
     <body>
         Home
-        <quiz-question-view></quiz-question-view>
+        <ng-view>
+
+        </ng-view>
+        <!-- <quiz-question-view></quiz-question-view> -->
 
         <script src="../node_modules/angular/angular.js"></script>
         <script src="../node_modules/angular-route/angular-route.js"></script>
         <script src="./index.module.js"></script>
         <script src="./index.js"></script>
-        <script src="./features/question-view/question-view.directive.js"></script>
-        <script src="./features/question-view/question-view.directive.controller.js"></script>
+        <script src="./features/question-view/question-view.controller.js"></script>
         <script src="./services/question.service.module.js"></script>
         <script src="./services/question.service.js"></script>
         <script src="./components/components.module.js"></script>
