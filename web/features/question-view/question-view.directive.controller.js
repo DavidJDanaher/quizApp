@@ -7,8 +7,25 @@
     function QuizQuestionViewController(questionService) {
         var vm = this;
 
-        vm.message = 'quiz questions';
+        vm.questions = getQuestionsArray();
 
-        vm.questions = questionService.getAllQuestions();
+        function getQuestionsArray() {
+            var rawQuestions = questionService.getAllQuestions();
+            var decoratedQuestions = [];
+
+            rawQuestions.forEach(function(question) {
+                question.userAnswer = null;
+                question.index = -1;
+
+                decoratedQuestions.push(question);
+            });
+
+            return decoratedQuestions;
+        }
+
+
+        vm.showVm = function() {
+            console.log(vm);
+        }
     }
 }(angular));

@@ -8,12 +8,12 @@
         return {
             restrict: 'E',
             templateUrl: './components/question-widget/question-widget.template.html',
-            controller: 'QuizQuestionViewController',
+            controller: 'QuestionWidgetDirectiveController',
             controllerAs: 'questionVm',
             scope: {},
             bindToController: {
                 index: '=',
-                questionJson: '='
+                questionObj: '='
             }
         }
     }

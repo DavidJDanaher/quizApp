@@ -7,7 +7,9 @@
     function QuestionWidgetDirectiveController() {
         var vm = this;
 
-        vm.message = 'Question widget controller';
-        
+        vm.setIndex = function () {
+            vm.questionObj.index = vm.index;
+        }
+
     }
 }(angular));

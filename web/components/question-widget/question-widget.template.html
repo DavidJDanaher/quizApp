@@ -1,8 +1,10 @@
-<div styl="{ margin: 20px }">
-    Question widget {{ questionVm.message }}
+<div style="{ margin: 20px }">
     <div>Question: {{ questionVm.index + 1 }}</div>
-    <div>{{ questionVm.questionJson.question }}</div>
-    <input type="radio" ng-model="questionVM.selection" value='1'>{{ questionJson.answers[0]}}</input>
-    <input type="radio" ng-model="questionVM.selection" value='2'>{{ questionJson.answers[1]}}</input>
-    <strong>current selection {{ questionVm.selection }}</strong>
+    <div>
+        {{ questionVm.questionObj.question }}
+        <input type="radio" ng-model="questionVm.questionObj.userAnswer" value="1" ng-change="questionVm.setIndex()">{{ questionVm.questionObj.answers[0]}}</input>
+        <input type="radio" ng-model="questionVm.questionObj.userAnswer" value="2" ng-change="questionVm.setIndex()">{{ questionVm.questionObj.answers[1]}}</input>
+    </div>
+
+    <strong>current selection {{ questionVm.questionObj.userAnswer }}</strong>
 </div>
