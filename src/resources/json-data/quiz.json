@@ -38,15 +38,17 @@
             "britannica",
             " encyclopedia britannica",
             " quiz",
-            " quizzes"," comic"," Superman"," Spider-Man"," Batman"," X-Men"," Clark Kent"," hero"," comic book"," superhero"," superhuman"," pop culture"],
-            "editorIds":null,
-            "newQuiz":false,
-            "numOfQuestions":6,
-            "timer":true,
-            "seconds":10,
-            "sortTitle":"Comic Books: Fact or Fiction?",
-            "quizType":"TRUE_FALSE",
-            "date":20140812,
-            "questions":null,
-            "identifier":"5011"
+            " quizzes"," comic"," Superman"," Spider-Man"," Batman"," X-Men"," Clark Kent"," hero"," comic book"," superhero"," superhuman",
+            " pop culture"
+        ],
+        "editorIds":null,
+        "newQuiz":false,
+        "numOfQuestions":6,
+        "timer":true,
+        "seconds":10,
+        "sortTitle":"Comic Books: Fact or Fiction?",
+        "quizType":"TRUE_FALSE",
+        "date":20140812,
+        "questions":null,
+        "identifier":"5011"
         }

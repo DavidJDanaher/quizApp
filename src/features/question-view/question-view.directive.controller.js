@@ -4,7 +4,7 @@
     angular.module('quiz.app')
         .controller('QuizQuestionViewController', QuizQuestionViewController);
 
-    function QuizQuestionViewController(questionService) {
+    function QuizQuestionViewController(questionService, $route) {
         var vm = this;
 
         vm.questions = getQuestionsArray();
