@@ -11,7 +11,9 @@
     function configure($routeProvider) {
         $routeProvider
             .when('/', {
-                templateUrl: 'features/home-view/home.html'
+                templateUrl: 'features/home-view/home.html',
+                controller: 'QuizHomeController',
+                controllerAs: 'homeVm'
             })
             .when('/quiz', {
                 templateUrl: 'features/question-view/question-view.html',

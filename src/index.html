@@ -3,19 +3,18 @@
     <head>
         <meta charset="utf-8">
         <title>Quiz App</title>
+        <link rel="stylesheet" type="text/css" href="./resources/styles/quiz-style.css">
     </head>
     <body>
-        Home
-        <ng-view>
+        <ng-view></ng-view>
 
-        </ng-view>
-        <!-- <quiz-question-view></quiz-question-view> -->
-
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
         <script src="../node_modules/angular/angular.js"></script>
         <script src="../node_modules/angular-route/angular-route.js"></script>
         <script src="./index.module.js"></script>
         <script src="./index.js"></script>
         <script src="./features/question-view/question-view.controller.js"></script>
+        <script src="./features/home-view/home-view.controller.js"></script>
         <script src="./services/question.service.module.js"></script>
         <script src="./services/question.service.js"></script>
         <script src="./components/components.module.js"></script>
