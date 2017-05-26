@@ -1,22 +1,24 @@
 <!DOCTYPE html>
 <html ng-app="quiz.app">
     <head>
-        <meta charset="utf-8">
+        <!-- <meta charset="utf-8"> -->
         <title>Quiz App</title>
         <link rel="stylesheet" type="text/css" href="./resources/styles/quiz-style.css">
     </head>
     <body>
-        <ng-view></ng-view>
+        <header ng-include="'features/header.html'">Put something here</header>
+        <main ng-view></main>
 
-        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script src="../node_modules/jquery/dist/jquery.min.js"></script>
         <script src="../node_modules/angular/angular.js"></script>
         <script src="../node_modules/angular-route/angular-route.js"></script>
         <script src="./index.module.js"></script>
         <script src="./index.js"></script>
         <script src="./features/question-view/question-view.controller.js"></script>
         <script src="./features/home-view/home-view.controller.js"></script>
-        <script src="./services/question.service.module.js"></script>
-        <script src="./services/question.service.js"></script>
+        <script src="./services/quiz-service.module.js"></script>
+        <script src="./services/quiz-state/quiz-state.service.js"></script>
+        <script src="./services/question-service/question.service.js"></script>
         <script src="./components/components.module.js"></script>
         <script src="./components/question-widget/question-widget.directive.js"></script>
         <script src="./components/question-widget/question-widget.directive.controller.js"></script>

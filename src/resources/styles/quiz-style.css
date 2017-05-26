@@ -37,3 +37,10 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+/*Header*/
+.header {
+    height: 30px;
+    background-color: white;
+    color: black;
+}

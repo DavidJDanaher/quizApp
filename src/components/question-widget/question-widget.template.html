@@ -1,10 +1,10 @@
-<div style="{ margin: 20px }">
+<ng-form name="questionForm">
     <div>Question: {{ questionVm.index + 1 }}</div>
     <div>
-        {{ questionVm.questionObj.question }}
-        <input type="radio" ng-model="questionVm.questionObj.userAnswer" value="1" ng-change="questionVm.setIndex()">{{ questionVm.questionObj.answers[0]}}</input>
-        <input type="radio" ng-model="questionVm.questionObj.userAnswer" value="2" ng-change="questionVm.setIndex()">{{ questionVm.questionObj.answers[1]}}</input>
+        <span id="question{{questionVm.index}}"> {{ questionVm.questionObj.question }} </span>
+        <input type="radio" ng-model="questionVm.questionObj.userAnswer" value=1 ng-change="questionVm.setIndex()">{{ questionVm.questionObj.answers[0]}}</input>
+        <input type="radio" ng-model="questionVm.questionObj.userAnswer" value=2 ng-change="questionVm.setIndex()">{{ questionVm.questionObj.answers[1]}}</input>
     </div>
 
     <strong>current selection {{ questionVm.questionObj.userAnswer }}</strong>
-</div>
+</ng-form>

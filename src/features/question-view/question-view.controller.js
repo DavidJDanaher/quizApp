@@ -4,27 +4,23 @@
     angular.module('quiz.app')
         .controller('QuizQuestionViewController', QuizQuestionViewController);
 
-    function QuizQuestionViewController(questionService) {
+    function QuizQuestionViewController(quizStateService) {
         var vm = this;
-        vm.questions = getQuestionsArray();
-
-        function getQuestionsArray() {
-            var rawQuestions = questionService.getAllQuestions();
-            var decoratedQuestions = [];
-
-            rawQuestions.forEach(function(question) {
-                question.userAnswer = null;
-                question.index = -1;
-
-                decoratedQuestions.push(question);
-            });
-
-            return decoratedQuestions;
-        }
+        var quiz = quizStateService.getQuiz();
+        vm.questions = quiz.questionList;
 
 
-        vm.showVm = function() {
-            console.log(vm);
+
+        // function appendQuestions(question) {
+        //     $('#question'+ question.index).append($.parseHTML(question.question))
+        // }
+        //
+        // vm.questions.forEach(function(question){
+        //     appendQuestions(question);
+        // });
+
+        vm.submit = function() {
+            quizStateService.updateQuiz(quiz);
         }
     }
 }(angular));

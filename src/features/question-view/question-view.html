@@ -1,9 +1,9 @@
 <div class="introduction">
-    <div>
-        Question view {{ questionVm.message }}
-    </div>
+    <form name="quizForm">
     <div ng-repeat="question in questionVm.questions">
         <question-widget index=$index question-obj="question"></question-widget>
     </div>
+    <form>
+
+    <button ng-click="questionVm.submit()"><a href="#!/results">See the results</a></button>
 </div>
-<button ng-click="questionVm.showVm()">Show something</button>
