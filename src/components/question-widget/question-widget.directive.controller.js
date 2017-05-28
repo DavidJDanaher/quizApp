@@ -7,9 +7,10 @@
     function QuestionWidgetDirectiveController() {
         var vm = this;
 
-        vm.setIndex = function () {
-            vm.questionObj.index = vm.index;
-        }
+        vm.$onChanges = function(changes) {
+            var htmlString = '<span id="question">' + changes.questionObj.currentValue.question + '</span>';
 
+            $('#question').replaceWith($.parseHTML(htmlString));
+        }
     }
 }(angular));

@@ -32,7 +32,4 @@
             $quizDescription.append($.parseHTML(quiz.description));
         }
     }
-
-    // angular.module('quiz.app')
-
 }(angular));

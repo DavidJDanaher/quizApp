@@ -7,21 +7,23 @@
     function quizStateService(questionService) {
         var self = this;
 
-        var quiz = {
-            questionList: getQuestionsArray(),
-            numberOfCorrect: 0,
-            outOf: 5
-        };
+        var quiz = new Quiz();
 
         self.getQuiz = getQuiz;
         self.updateQuiz = updateQuiz;
+
+        function Quiz() {
+            this.questionList = getQuestionsArray();
+            this.numberAnsweredCorrectly = 0;
+            this.totalNumberOfQuestions= 6;
+        }
 
         function getQuiz() {
             return quiz;
         }
 
         function updateQuiz(quizObj) {
-            quiz = quizObj;
+            quiz.questionList = quizObj.questionList;
             quiz.numberOfCorrect = getScore();
         }
 
@@ -41,9 +43,9 @@
             var rawQuestions = questionService.getAllQuestions();
             var decoratedQuestions = [];
 
-            rawQuestions.forEach(function(question) {
+            rawQuestions.forEach(function(question, index) {
                 question.userAnswer = null;
-                question.index = -1;
+                question.index = index;
 
                 decoratedQuestions.push(question);
             });

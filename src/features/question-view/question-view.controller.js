@@ -8,18 +8,21 @@
         var vm = this;
         var quiz = quizStateService.getQuiz();
         vm.questions = quiz.questionList;
+        vm.$onInit = init;
+        vm.goToQuestion = goToQuestion;
+        vm.submit = submit;
 
+        vm.$onInit();
 
+        function init() {
+            goToQuestion(0);
+        }
 
-        // function appendQuestions(question) {
-        //     $('#question'+ question.index).append($.parseHTML(question.question))
-        // }
-        //
-        // vm.questions.forEach(function(question){
-        //     appendQuestions(question);
-        // });
+        function goToQuestion(index) {
+            vm.index = index
+        }
 
-        vm.submit = function() {
+        function submit() {
             quizStateService.updateQuiz(quiz);
         }
     }

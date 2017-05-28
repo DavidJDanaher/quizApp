@@ -18,18 +18,12 @@
             .when('/quiz', {
                 templateUrl: 'features/question-view/question-view.html',
                 controller: 'QuizQuestionViewController',
-                controllerAs: 'questionVm',
-                resolve: {
-                    test: 'quizStateService.getQuiz()'
-                }
+                controllerAs: 'questionVm'
             })
             .when('/results', {
                 templateUrl: 'features/results-view/results-view.html',
                 controller: 'QuizResultsViewController',
-                controllerAs: 'resultsVm',
-                resolve: {
-                    test: 'test'
-                }
+                controllerAs: 'resultsVm'
             })
             .otherwise({
                 redirectTo: '/home'
