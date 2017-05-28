@@ -8,6 +8,9 @@
         var vm = this;
         var quiz = quizStateService.getQuiz();
         vm.questions = quiz.questionList;
+        vm.index = 0;
+
+
         vm.$onInit = init;
         vm.goToQuestion = goToQuestion;
         vm.submit = submit;
@@ -19,7 +22,8 @@
         }
 
         function goToQuestion(index) {
-            vm.index = index
+            vm.index = index;
+            vm.quizInProgress = (index < vm.questions.length - 1);
         }
 
         function submit() {

@@ -1,5 +1,5 @@
 <ng-form name="questionForm">
-    <div>Question: {{ widgetVm.index + 1 }}</div>
+    <div>Question: {{ widgetVm.questionObj.index + 1 }}</div>
     <div ng-required>
         <span id="question"></span>
         <input type="radio" ng-model="widgetVm.questionObj.userAnswer" value="1">{{ widgetVm.questionObj.answers[0]}}</input>

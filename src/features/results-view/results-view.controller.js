@@ -6,8 +6,14 @@
 
     function QuizResultsViewController(quizStateService) {
         var vm = this;
-        var quiz = quizStateService.getQuiz();
+        vm.quiz;
 
-        console.log(quiz);
+        vm.$onInit = init;
+
+        vm.$onInit();
+
+        function init() {
+            vm.quiz = quizStateService.getQuiz();
+        }
     }
 }(angular));

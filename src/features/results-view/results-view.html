@@ -1,1 +1,12 @@
-<div>The results</div>
+<div class="introduction">
+    Result: {{ resultsVm.quiz.numberAnsweredCorrectly }} / {{ resultsVm.quiz.totalNumberOfQuestions }}
+
+    <div ng-repeat="question in resultsVm.quiz.questionList">
+        <div> {{question.index + 1 }} {{ question.question }}</div>
+        <div> {{ question.answers[userAnswer - 1] }}
+            <span ng-if="question.userAnsweredCorrectly">√</span>
+            <span ng-if="!question.userAnsweredCorrectly">X</span>
+        </div>
+        <div>{{ question.explanation}}</div>
+    </div>
+</div>

@@ -5,14 +5,6 @@
         .directive('questionWidget', questionWidget);
 
     function questionWidget() {
-
-        // function link(scope, element, attribute) {
-        //     scope.$watch(scope.widgetVm.index, function (val) {
-        //         console.log(val);
-        //     });
-        //     console.log(scope.widgetVm.index);
-        // }
-
         return {
             restrict: 'E',
             templateUrl: './components/question-widget/question-widget.template.html',
@@ -20,10 +12,8 @@
             controllerAs: 'widgetVm',
             scope: {},
             bindToController: {
-                index: '=',
                 questionObj: '<'
             }
-            // link: link
         }
     }
 }(angular));

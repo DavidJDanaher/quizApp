@@ -11,6 +11,7 @@
 
         self.getQuiz = getQuiz;
         self.updateQuiz = updateQuiz;
+        self.saveQuiz = saveQuiz;
 
         function Quiz() {
             this.questionList = getQuestionsArray();
@@ -23,20 +24,15 @@
         }
 
         function updateQuiz(quizObj) {
+            quiz.numberOfCorrect = 0;
             quiz.questionList = quizObj.questionList;
-            quiz.numberOfCorrect = getScore();
-        }
-
-        function getScore() {
-            var total = 0;
 
             quiz.questionList.forEach(function(question) {
                 if (question.userAnswer !== null && question.correct === Number.parseInt(question.userAnswer)) {
-                    total++;
+                    quiz.numberOfCorrect++;
+                    question.userAnsweredCorrectly = true;
                 }
             });
-
-            return total;
         }
 
         function getQuestionsArray() {
@@ -46,6 +42,7 @@
             rawQuestions.forEach(function(question, index) {
                 question.userAnswer = null;
                 question.index = index;
+                question.userAnsweredCorrectly = false;
 
                 decoratedQuestions.push(question);
             });
@@ -53,6 +50,9 @@
             return decoratedQuestions;
         }
 
+        function saveQuiz() {
+
+        }
 
     }
 }(angular));
