@@ -4,23 +4,37 @@
     angular.module('quiz.app.services')
         .service('quizStateService', quizStateService);
 
-    function quizStateService(questionService) {
+    function quizStateService(questionService, $q) {
         var self = this;
 
-        var quiz = new Quiz();
+        var quiz;
 
+        self.$onInit = init;
         self.getQuiz = getQuiz;
         self.updateQuiz = updateQuiz;
         self.saveQuiz = saveQuiz;
 
+        self.$onInit = init;
+
+        self.$onInit();
+
+        function init() {
+            quiz = new Quiz();
+        }
+
         function Quiz() {
-            this.questionList = getQuestionsArray();
+            this.questionList = null;
             this.numberAnsweredCorrectly = 0;
             this.totalNumberOfQuestions= 6;
         }
 
         function getQuiz() {
-            return quiz;
+            return getQuestionsArray()
+                .then(function(response) {
+                    quiz.questionList = response;
+
+                    return quiz;
+                });
         }
 
         function updateQuiz(quizObj) {
@@ -36,18 +50,27 @@
         }
 
         function getQuestionsArray() {
-            var rawQuestions = questionService.getAllQuestions();
+            var rawQuestions;
             var decoratedQuestions = [];
+
+            return questionService.getAllQuestions()
+                .then(function (rawQuestions) {
+                    return addUserInteractionProperties(rawQuestions);
+                });
+        }
+
+        function addUserInteractionProperties(rawQuestions) {
+            var questions = [];
 
             rawQuestions.forEach(function(question, index) {
                 question.userAnswer = null;
                 question.index = index;
                 question.userAnsweredCorrectly = false;
 
-                decoratedQuestions.push(question);
+                questions.push(question);
             });
 
-            return decoratedQuestions;
+            return questions;
         }
 
         function saveQuiz() {

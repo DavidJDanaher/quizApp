@@ -1,40 +1,62 @@
 /* Home view */
 .introduction {
-    margin: 80px auto;
+    margin: 0 20px;
     padding: 10px;
-    width: 80%;
+    width: auto;
     min-width: 500px;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.introduction img {
+    margin: auto;
+    width: 60%;
+    display: block;
+}
+
+.introduction .text-wrapper {
+    border: 2px solid white;
+    margin: auto;
     font-family: sans-serif;
     font-size: 20px;
     line-height: 30px;
     color: white;
-    background-color: rgba(0, 0, 0, 0.5);
+    width: 60%
 }
 
 .introduction h1 {
     text-align: center;
+    line-height: 40px;
 }
 
 .introduction div {
     margin-top: 10px;
 }
 
-.button {
-    width: 100px;
+.text-box-wrapper {
+    width: 200px;
     margin: 20px auto;
-    padding: 20px;
+    font-size: 24px;
+}
+
+.name-input {
+    width: 100%;
+    font-size: 24px;
+    border-style: solid;
+    padding: 8px;
     background-color: white;
 }
 
-.button a {
+.button {
     text-decoration: none;
     color: black;
+    padding: 8px;
+    width: 100%
 }
 
 /* Index html */
 body {
-    background-image: url("https://media1.britannica.com/eb-media/08/178408-131-68C3BF1E.jpg");
-    background-repeat: no-repeat;
+    background-image: url("../images/super-hero-background.jpg");
+    background-repeat: repeat-y;
     background-size: cover;
 }
 

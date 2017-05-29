@@ -6,8 +6,8 @@
 
     function QuizQuestionViewController(quizStateService) {
         var vm = this;
-        var quiz = quizStateService.getQuiz();
-        vm.questions = quiz.questionList;
+        var quiz;
+        vm.questions;
         vm.index = 0;
 
 
@@ -18,7 +18,13 @@
         vm.$onInit();
 
         function init() {
-            goToQuestion(0);
+            quizStateService.getQuiz()
+                .then(function(response) {
+                    quiz = response;
+                    vm.questions = quiz.questionList;
+
+                    goToQuestion(0);
+                });
         }
 
         function goToQuestion(index) {

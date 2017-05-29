@@ -1,9 +1,21 @@
 <div class="introduction">
-    <h1 id="quiz-title"></h1>
-    <div id="quiz-introduction"></div>
-    <div><em id="quiz-description"></em></div>
-
-    <div class="button">
-        <a href="#!/quiz">Take the Quiz</a>
+    <img src="https://media1.britannica.com/eb-media/08/178408-131-68C3BF1E.jpg"/>
+    <div class="text-wrapper">
+        <h1 id="quiz-title"></h1>
+        <div id="quiz-introduction"></div>
+        <div>
+            <em id="quiz-description"></em>
+        </div>
+        <div class="text-box-wrapper">
+            <input type="text"
+                ng-blur="homeVm.setName(text)"
+                ng-if="!homeVm.showSumbitButton"
+                placeholder="Name"
+                required
+                class="name-input">
+            <div class="name-input" ng-if="homeVm.showSumbitButton">
+                <a class="button" href="#!/quiz">Take the Quiz</a>
+            </div>
+        </div>
     </div>
 </div>

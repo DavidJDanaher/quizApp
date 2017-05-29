@@ -9,9 +9,16 @@
     function QuizHomeController($http) {
         var vm = this;
 
+        vm.setName = setName;
         vm.quizObj = {};
+        vm.userName = null;
 
         getQuizJson();
+
+        function setName(name) {
+            vm.userName = name;
+            vm.showSumbitButton = true;
+        }
 
         function getQuizJson() {
             $http.get('resources/json-data/quiz.json')
