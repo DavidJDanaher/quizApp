@@ -1,0 +1,23 @@
+.question-wrapper {
+    width: 60%;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid white;
+    padding: 15px;
+}
+
+.question-text {
+    text-align: center;
+    margin: 20px auto;
+}
+
+.radio-btn {
+    font-size: 32px;
+    margin: 5px;
+}
+
+.radio-btn input {
+    vertical-align: middle;
+    line-height: 30px;
+    margin: 8px;
+}

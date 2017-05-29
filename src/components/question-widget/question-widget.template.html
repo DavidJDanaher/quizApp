@@ -1,13 +1,13 @@
-<h1>Question: {{ widgetVm.questionObj.index + 1 }}</h1>
+<h1 class="title-text">Question: {{ widgetVm.questionObj.index + 1 }}</h1>
 <div>
     <div class="question-text">
         <span id="question"></span>
     </div>
     <div class="question-text">
-        <label class="radio-btn">
+        <label class="radio-btn title-text">
             <input type="radio" ng-model="widgetVm.questionObj.userAnswer" value="1">{{ widgetVm.questionObj.answers[0]}}</input>
         </label>
-        <label class="radio-btn">
+        <label class="radio-btn title-text">
             <input type="radio" ng-model="widgetVm.questionObj.userAnswer" value="2">{{ widgetVm.questionObj.answers[1]}}</input>
         </label>
     </div>

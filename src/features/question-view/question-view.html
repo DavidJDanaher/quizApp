@@ -1,14 +1,14 @@
 <div class="page-background">
-    <div class="question-wrapper">
+    <div class="question-wrapper standard-text">
         <question-widget question-obj="questionVm.questions[questionVm.index]"></question-widget>
         <a ng-show="questionVm.quizInProgress && questionVm.questions[questionVm.index].userAnswer"
             ng-click="questionVm.goToQuestion(questionVm.index + 1)">
-            <div class="name-input button">Next Question</div>
+            <div class="title-text button">Next Question</div>
         </a>
         <div>
             <a ng-show="!questionVm.quizInProgress && questionVm.questions[questionVm.index].userAnswer"
                 ng-click="questionVm.submit()" href="#!/results">
-                <div class="name-input button">See the results</div>
+                <div class="title-text button">See the results</div>
             </a>
         </div>
     </div>

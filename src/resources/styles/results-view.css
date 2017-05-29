@@ -1,0 +1,45 @@
+.line {
+    border-bottom: 2px solid white;
+}
+
+.result img {
+    width: 40px;
+    vertical-align: middle;
+}
+
+.question-wrapper {
+    text-align: left;
+    overflow: hidden;
+}
+
+.result-panel {
+    float: left;
+    width: 75%;
+    padding: 15px;
+}
+
+.question-number {
+    float: left;
+    padding-bottom: 100%;
+    margin-bottom: -100%;
+    width: 20%;
+    border-right: 2px solid white;
+}
+
+.question-number span {
+    font-size: 60px;
+    vertical-align: middle;
+}
+
+.question {
+    padding: 10px;
+    margin-top: 0;
+}
+
+.correct {
+    background-color: rgba(0, 182, 124, 1.0);
+}
+
+.incorrect {
+    background-color: rgba(255, 0, 0, 1.0);
+}

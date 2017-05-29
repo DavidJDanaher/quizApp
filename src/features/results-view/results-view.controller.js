@@ -14,9 +14,40 @@
 
         function init() {
             vm.quiz = quizStateService.getQuiz();
-            if (vm.quiz === undefined) {
-                location.assign('#!/home');
-            }
+
+
+            vm.quiz = {
+                numberAnsweredCorrectly: 3,
+                questionList: [{
+                    correct:2,
+                    answers:['Yep', 'Nope'],
+                    explanation:"Wolverine has sharp claws and is very resilient.",
+                    index:0,level:1,question:"In <em>X-Men</em>, Wolverine is able to turn into a ball of fire.",
+                    type:"TRUE_FALSE",userAnswer:"1",
+userAnsweredCorrectly:false
+                },
+                {
+                    correct:2,
+                    answers:['Yep', 'Nope'],
+                    explanation:"Wolverine has sharp claws and is very resilient.",
+                    index:1,level:1,question:"In <em>X-Men</em>, Wolverine is able to turn into a ball of fire.",
+                    type:"TRUE_FALSE",userAnswer:"1",
+    userAnsweredCorrectly:false
+},
+                {
+                    correct:2,
+                    answers:['Yep', 'Nope'],
+                    explanation:"Wolverine has sharp claws and is very resilient.",
+                    index:2,level:1,question:"In <em>X-Men</em>, Wolverine is able to turn into a ball of fire.",
+                    type:"TRUE_FALSE",userAnswer:"1",
+    userAnsweredCorrectly:true
+                }],
+                totalNumberOfQuestions: 6,
+                userName: 'Dae'
+            };
+            // if (vm.quiz === undefined) {
+            //     location.assign('#!/home');
+            // }
 
             setTimeout(function () {
                 renderElements();

@@ -1,0 +1,64 @@
+.page-background {
+    color: white;
+    margin: 0 20px;
+    padding: 10px;
+    width: auto;
+    min-width: 500px;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.page-background a,
+.start-over a {
+    text-decoration: none;
+}
+
+.title-text {
+    text-align: center;
+    font-size: 50px;
+    line-height: 50px;
+    letter-spacing: 3px;
+    font-family: 'Badaboom', sans-serif;
+    vertical-align: middle;
+}
+
+.standard-text {
+    font-family: 'Anime Ace', sans-serif;
+    font-size: 20px;
+    line-height: 30px;
+    color: white;
+}
+
+body {
+    background-image: url("../images/super-hero-background.jpg");
+    background-repeat: repeat-y;
+    background-size: cover;
+}
+
+.start-over {
+    float: right;
+}
+
+.button {
+    width: 300px;
+    margin: auto;
+    border-style: solid;
+    padding: 8px;
+    background-color: white;
+    color: black;
+}
+
+.button:hover {
+    color: white;
+    background-color: black;
+    box-shadow: 0 0 3px white;
+}
+
+@font-face {
+    font-family: 'Badaboom';
+    src: url('../fonts/badaboom_bb/BADABB__.TTF');
+}
+
+@font-face {
+    font-family: 'Anime Ace';
+    src: url('../fonts/animeace2bb_tt/animeace2_reg.ttf');
+}

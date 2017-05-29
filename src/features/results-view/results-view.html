@@ -1,16 +1,15 @@
 <div class="page-background">
-
-    <h1>{{resultsVm.quiz.userName}}'s Result: {{ resultsVm.quiz.numberAnsweredCorrectly }} / {{ resultsVm.quiz.totalNumberOfQuestions }}</h1>
-    <div class="question-wrapper">
+    <h1 class="title-text">{{resultsVm.quiz.userName}}'s Result: {{ resultsVm.quiz.numberAnsweredCorrectly }} / {{ resultsVm.quiz.totalNumberOfQuestions }}</h1>
+    <div class="question-wrapper standard-text">
         <div class="result" ng-repeat="question in resultsVm.quiz.questionList">
-            <div class="question-number">
+            <div class="question-number title-text">
                 <h1>{{ question.index + 1 }}</h1>
             </div>
 
-            <div class="float-this">
+            <div class="result-panel">
                 <div id="question-{{$index}}">{{ question.question }}</div>
                 <div class="question">
-                    <span class="answer">{{ question.answers[question.correct - 1] }}</span>
+                    <span class="title-text">{{ question.answers[question.correct - 1] }}</span>
                     <span ng-if="question.userAnsweredCorrectly" >
                         <img class="icon" src="resources/images/check_mark.png"/>
                     </span>

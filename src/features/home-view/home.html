@@ -1,21 +1,21 @@
 <div class="page-background">
-    <div class="text-wrapper">
-        <h1 id="quiz-title"></h1>
+    <div class="text-wrapper standard-text">
+        <h1 class="title-text" id="quiz-title"></h1>
         <img class="main-image" src="https://media1.britannica.com/eb-media/08/178408-131-68C3BF1E.jpg"/>
         <div id="quiz-introduction"></div>
         <div id="quiz-description"></div>
     </div>
-    <div class="text-box-wrapper">
+    <div class="input-box-wrapper">
         <input type="text"
             ng-model="homeVm.name"
             ng-model-options="{ debounce: 500 }"
             ng-hide="homeVm.name"
             ng-change="homeVm.setName()"
             placeholder="Name"
-            class="name-input">
+            class="name-input title-text">
 
             <a href="#!/quiz">
-                <div ng-show="homeVm.name" class="name-input button">Take the Quiz</div>
+                <div ng-show="homeVm.name" class="name-input title-text">Take the Quiz</div>
             </a>
     </div>
 </div>

@@ -4,11 +4,15 @@
         <meta charset="utf-8">
         <title>Superhero Quiz App</title>
         <link rel="stylesheet" type="text/css" href="./resources/styles/quiz-style.css">
+        <link rel="stylesheet" type="text/css" href="./resources/styles/app-shared.css">
+        <link rel="stylesheet" type="text/css" href="./resources/styles/home-view.css">
+        <link rel="stylesheet" type="text/css" href="./resources/styles/question-view.css">
+        <link rel="stylesheet" type="text/css" href="./resources/styles/results-view.css">
     </head>
     <body>
         <main ng-view></main>
-        <div class="start-over">
-            <a class="name-input button" href="#!/home">Start Over</a>
+        <div class="start-over title-text">
+            <a class="button" href="#!/home">Start Over</a>
         </div>
         <script src="../node_modules/jquery/dist/jquery.min.js"></script>
         <script src="../node_modules/angular/angular.js"></script>
