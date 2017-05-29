@@ -1,5 +1,5 @@
 /* Home view */
-.introduction {
+.page-background {
     margin: 0 20px;
     padding: 10px;
     width: auto;
@@ -7,13 +7,13 @@
     background-color: rgba(0, 0, 0, 0.8);
 }
 
-.introduction img {
+.page-background .main-image {
     margin: auto;
     width: 100%;
     display: block;
 }
 
-.introduction .text-wrapper {
+.page-background .text-wrapper {
     border: 2px solid white;
     margin: 20px auto;
     font-family: 'Anime Ace', sans-serif;
@@ -24,7 +24,11 @@
     padding: 15px;
 }
 
-.introduction h1 {
+.page-background .text-wrapper div {
+    margin-top: 20px;
+}
+
+.page-background h1 {
     text-align: center;
     font-size: 50px;
     line-height: 50px;
@@ -33,21 +37,19 @@
     color: white;
 }
 
-.introduction div {
-    margin-top: 20px;
-}
-
 .text-box-wrapper {
     width: 200px;
     margin: 20px auto;
 }
 
-.text-box-wrapper a {
+.text-box-wrapper a,
+.question-wrapper a {
     text-decoration: none;
 }
 
 .name-input {
-    width: 100%;
+    width: 220px;
+    margin: auto;
     font-size: 30px;
     border-style: solid;
     padding: 8px;
@@ -59,7 +61,7 @@
 
 .button {
     color: black;
-    width: 100%;
+    /*width: 100%;*/
 }
 
 .button:hover {
@@ -85,6 +87,11 @@
     letter-spacing: 3px;
 }
 
+.question-text {
+    text-align: center;
+    margin: 20px auto;
+}
+
 .radio-btn {
     font-family: 'Badaboom', sans-serif;
     letter-spacing: 3px;
@@ -99,8 +106,66 @@
 }
 
 /* Results */
+
+.line {
+    border-bottom: 2px solid white;
+}
+
+.result {
+    height: auto;
+
+}
+
 .result img {
-    width: 30px;
+    width: 40px;
+    vertical-align: middle;
+}
+
+.question-wrapper {
+    text-align: left;
+    overflow: hidden;
+}
+
+.float-this {
+    float: left;
+    width: 75%;
+    padding: 15px;
+}
+
+.question-number {
+    float: left;
+    font-family: 'Badaboom';
+    padding-bottom: 100%;
+    margin-bottom: -100%;
+    width: 20%;
+    border-right: 2px solid white;
+    text-align: center;
+
+}
+
+.question-number span {
+    font-size: 60px;
+    vertical-align: middle;
+}
+
+.question {
+    padding: 10px;
+    margin-top: 0;
+}
+
+.answer {
+    font-family: 'Badaboom';
+    font-size: 36px;
+    letter-spacing: 3px;
+    vertical-align: middle;
+}
+
+.correct {
+    background-color: rgba(0, 182, 124, 1.0);
+}
+
+.incorrect {
+    background-color: rgba(255, 0, 0, 1.0);
 }
 
 /* Index html */
@@ -108,6 +173,10 @@ body {
     background-image: url("../images/super-hero-background.jpg");
     background-repeat: repeat-y;
     background-size: cover;
+}
+
+.start-over {
+    float: right;
 }
 
 @font-face {

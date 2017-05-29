@@ -13,10 +13,34 @@
         vm.$onInit();
 
         function init() {
-            quizStateService.getQuiz()
-                .then(function(response) {
-                    vm.quiz = response;
-                });
+            vm.quiz = quizStateService.getQuiz();
+            if (vm.quiz === undefined) {
+                location.assign('#!/home');
+            }
+
+            setTimeout(function () {
+                renderElements();
+            }, 200);
         }
+
+        function renderElements() {
+            vm.quiz.questionList.forEach(function(question, index) {
+                var questionHtml = '<div class="question">' + question.question + '</div>';
+                var questionId = '#question-' + index;
+                var explanationHtml;
+                var explanationId = '#explanation-' + index;
+
+                if (question.userAnsweredCorrectly) {
+                    explanationHtml = '<div class="question correct">' + question.explanation + '</div>';
+                } else {
+                    explanationHtml = '<div class="question incorrect">' + question.explanation + '</div>';
+                }
+
+                $(questionId).replaceWith($.parseHTML(questionHtml));
+                $(explanationId).replaceWith($.parseHTML(explanationHtml));
+            });
+        }
+
+
     }
 }(angular));

@@ -1,13 +1,13 @@
-<div class="introduction">
+<div class="page-background">
     <div class="question-wrapper">
-        <form name="quizForm">
-            <question-widget question-obj="questionVm.questions[questionVm.index]"></question-widget>
-        </form>
-        <a ng-if="questionVm.quizInProgress" ng-click="questionVm.goToQuestion(questionVm.index + 1)">
+        <question-widget question-obj="questionVm.questions[questionVm.index]"></question-widget>
+        <a ng-show="questionVm.quizInProgress && questionVm.questions[questionVm.index].userAnswer"
+            ng-click="questionVm.goToQuestion(questionVm.index + 1)">
             <div class="name-input button">Next Question</div>
         </a>
         <div>
-            <a ng-if="!questionVm.quizInProgress" ng-click="questionVm.submit()" href="#!/results">
+            <a ng-show="!questionVm.quizInProgress && questionVm.questions[questionVm.index].userAnswer"
+                ng-click="questionVm.submit()" href="#!/results">
                 <div class="name-input button">See the results</div>
             </a>
         </div>

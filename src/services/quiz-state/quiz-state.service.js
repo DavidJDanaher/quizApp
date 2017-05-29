@@ -7,19 +7,24 @@
     function quizStateService(questionService, $q) {
         var self = this;
 
-        var quiz;
+        self.quiz;
 
         self.$onInit = init;
         self.getQuiz = getQuiz;
         self.updateQuiz = updateQuiz;
         self.saveQuiz = saveQuiz;
-
+        self.setUserName = setUserName;
         self.$onInit = init;
 
         self.$onInit();
 
         function init() {
-            quiz = new Quiz();
+            getQuestionsArray()
+                .then(function(response) {
+                    self.quiz = new Quiz();
+
+                    self.quiz.questionList = response;
+                });
         }
 
         function Quiz() {
@@ -29,21 +34,20 @@
         }
 
         function getQuiz() {
-            return getQuestionsArray()
-                .then(function(response) {
-                    quiz.questionList = response;
+            return self.quiz;
+        }
 
-                    return quiz;
-                });
+        function setUserName(name) {
+            self.quiz.userName = name;
         }
 
         function updateQuiz(quizObj) {
-            quiz.numberOfCorrect = 0;
-            quiz.questionList = quizObj.questionList;
+            self.quiz.numberOfCorrect = 0;
+            self.quiz.questionList = quizObj.questionList;
 
-            quiz.questionList.forEach(function(question) {
+            self.quiz.questionList.forEach(function(question) {
                 if (question.userAnswer !== null && question.correct === Number.parseInt(question.userAnswer)) {
-                    quiz.numberOfCorrect++;
+                    self.quiz.numberAnsweredCorrectly++;
                     question.userAnsweredCorrectly = true;
                 }
             });
