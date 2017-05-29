@@ -13,7 +13,10 @@
         vm.$onInit();
 
         function init() {
-            vm.quiz = quizStateService.getQuiz();
+            quizStateService.getQuiz()
+                .then(function(response) {
+                    vm.quiz = response;
+                });
         }
     }
 }(angular));

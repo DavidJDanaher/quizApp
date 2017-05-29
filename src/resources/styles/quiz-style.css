@@ -58,7 +58,6 @@
 }
 
 .button {
-
     color: black;
     width: 100%;
 }
@@ -69,20 +68,47 @@
     box-shadow: 0 0 3px white;
 }
 
+/* QUESTIONS */
+
+.question-wrapper {
+    color: white;
+    width: 60%;
+    margin: 20px auto;
+    text-align: center;
+    font-family: 'Anime Ace', sans-serif;
+    border: 2px solid white;
+    padding: 15px;
+}
+
+.question-wrapper h2 {
+    font-family: 'Badaboom', sans-serif;
+    letter-spacing: 3px;
+}
+
+.radio-btn {
+    font-family: 'Badaboom', sans-serif;
+    letter-spacing: 3px;
+    font-size: 32px;
+    margin: 5px;
+}
+
+.radio-btn input {
+    vertical-align: middle;
+    line-height: 30px;
+    margin: 8px;
+}
+
+/* Results */
+.result img {
+    width: 30px;
+}
+
 /* Index html */
 body {
     background-image: url("../images/super-hero-background.jpg");
     background-repeat: repeat-y;
     background-size: cover;
 }
-
-/*Header*/
-.header {
-    height: 30px;
-    background-color: white;
-    color: black;
-}
-
 
 @font-face {
     font-family: 'Badaboom';

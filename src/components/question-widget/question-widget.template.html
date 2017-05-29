@@ -1,10 +1,16 @@
 <ng-form name="questionForm">
-    <div>Question: {{ widgetVm.questionObj.index + 1 }}</div>
+    <h1>Question: {{ widgetVm.questionObj.index + 1 }}</h1>
     <div ng-required>
-        <span id="question"></span>
-        <input type="radio" ng-model="widgetVm.questionObj.userAnswer" value="1">{{ widgetVm.questionObj.answers[0]}}</input>
-        <input type="radio" ng-model="widgetVm.questionObj.userAnswer" value="2">{{ widgetVm.questionObj.answers[1]}}</input>
+        <div>
+            <span id="question"></span>
+        </div>
+        <div>
+            <label class="radio-btn">
+                <input type="radio" ng-model="widgetVm.questionObj.userAnswer" value="1">{{ widgetVm.questionObj.answers[0]}}</input>
+            </label>
+            <label class="radio-btn">
+                <input type="radio" ng-model="widgetVm.questionObj.userAnswer" value="2">{{ widgetVm.questionObj.answers[1]}}</input>
+            </label>
+        </div>
     </div>
-
-    <strong>current selection {{ widgetVm.questionObj.userAnswer }}</strong>
 </ng-form>

@@ -1,11 +1,15 @@
 <div class="introduction">
-    <form name="quizForm">
-        <question-widget question-obj="questionVm.questions[questionVm.index]"></question-widget>
-    </form>
-    <button ng-if="questionVm.quizInProgress" ng-click="questionVm.goToQuestion(questionVm.index + 1)">Next Question</button>
-    <div>
-        <button ng-if="!questionVm.quizInProgress" ng-click="questionVm.submit()">
-            <a href="#!/results">See the results</a>
-        </button>
+    <div class="question-wrapper">
+        <form name="quizForm">
+            <question-widget question-obj="questionVm.questions[questionVm.index]"></question-widget>
+        </form>
+        <a ng-if="questionVm.quizInProgress" ng-click="questionVm.goToQuestion(questionVm.index + 1)">
+            <div class="name-input button">Next Question</div>
+        </a>
+        <div>
+            <a ng-if="!questionVm.quizInProgress" ng-click="questionVm.submit()" href="#!/results">
+                <div class="name-input button">See the results</div>
+            </a>
+        </div>
     </div>
 </div>

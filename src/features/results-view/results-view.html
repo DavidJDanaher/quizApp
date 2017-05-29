@@ -1,12 +1,19 @@
 <div class="introduction">
-    Result: {{ resultsVm.quiz.numberAnsweredCorrectly }} / {{ resultsVm.quiz.totalNumberOfQuestions }}
+    <div class="question-wrapper">
+        Result: {{ resultsVm.quiz.numberAnsweredCorrectly }} / {{ resultsVm.quiz.totalNumberOfQuestions }}
 
-    <div ng-repeat="question in resultsVm.quiz.questionList">
-        <div> {{question.index + 1 }} {{ question.question }}</div>
-        <div> {{ question.answers[userAnswer - 1] }}
-            <span ng-if="question.userAnsweredCorrectly">√</span>
-            <span ng-if="!question.userAnsweredCorrectly">X</span>
+        <div class="result" ng-repeat="question in resultsVm.quiz.questionList">
+            <div>{{question.index + 1 }}</div>
+            <div> {{ question.question }}</div>
+            <div> {{ question.answers[userAnswer - 1] }}
+                <span ng-if="question.userAnsweredCorrectly" >
+                    <img class="icon" src="resources/images/check_mark.png"/>
+                </span>
+                <span ng-if="!question.userAnsweredCorrectly">
+                    <img class="icon" src="resources/images/x-mark.png"/>
+                </span>
+            </div>
+            <div>{{ question.explanation}}</div>
         </div>
-        <div>{{ question.explanation}}</div>
     </div>
 </div>
