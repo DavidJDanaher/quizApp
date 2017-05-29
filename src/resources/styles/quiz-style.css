@@ -9,48 +9,64 @@
 
 .introduction img {
     margin: auto;
-    width: 60%;
+    width: 100%;
     display: block;
 }
 
 .introduction .text-wrapper {
     border: 2px solid white;
-    margin: auto;
-    font-family: sans-serif;
+    margin: 20px auto;
+    font-family: 'Anime Ace', sans-serif;
     font-size: 20px;
     line-height: 30px;
     color: white;
-    width: 60%
+    width: 60%;
+    padding: 15px;
 }
 
 .introduction h1 {
     text-align: center;
-    line-height: 40px;
+    font-size: 50px;
+    line-height: 50px;
+    letter-spacing: 3px;
+    font-family: 'Badaboom', sans-serif;
+    color: white;
 }
 
 .introduction div {
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 .text-box-wrapper {
     width: 200px;
     margin: 20px auto;
-    font-size: 24px;
+}
+
+.text-box-wrapper a {
+    text-decoration: none;
 }
 
 .name-input {
     width: 100%;
-    font-size: 24px;
+    font-size: 30px;
     border-style: solid;
     padding: 8px;
     background-color: white;
+    font-family: 'Badaboom';
+    letter-spacing: 3px;
+    text-align: center;
 }
 
 .button {
-    text-decoration: none;
+
     color: black;
-    padding: 8px;
-    width: 100%
+    width: 100%;
+}
+
+.button:hover {
+    color: white;
+    background-color: black;
+    box-shadow: 0 0 3px white;
 }
 
 /* Index html */
@@ -65,4 +81,15 @@ body {
     height: 30px;
     background-color: white;
     color: black;
+}
+
+
+@font-face {
+    font-family: 'Badaboom';
+    src: url('../fonts/badaboom_bb/BADABB__.TTF');
+}
+
+@font-face {
+    font-family: 'Anime Ace';
+    src: url('../fonts/animeace2bb_tt/animeace2_reg.ttf');
 }
