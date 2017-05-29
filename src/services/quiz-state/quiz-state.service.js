@@ -4,7 +4,7 @@
     angular.module('quiz.app.services')
         .service('quizStateService', quizStateService);
 
-    function quizStateService(questionService, $q) {
+    function quizStateService(quizDataService, $q) {
         var self = this;
 
         self.quiz;
@@ -57,7 +57,7 @@
             var rawQuestions;
             var decoratedQuestions = [];
 
-            return questionService.getAllQuestions()
+            return quizDataService.getAllQuestions()
                 .then(function (rawQuestions) {
                     return addUserInteractionProperties(rawQuestions);
                 });

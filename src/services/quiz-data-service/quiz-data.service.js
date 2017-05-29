@@ -2,12 +2,13 @@
     'use strict';
 
     angular.module('quiz.app.services')
-        .service('questionService',questionService);
+        .service('quizDataService',quizDataService);
 
-    function questionService($http) {
+    function quizDataService($http) {
         var self = this;
 
         self.getAllQuestions = getAllQuestions;
+        self.getQuizData = getQuizData;
 
         function getAllQuestions() {
             return $http.get('resources/json-data/questions.json')
@@ -19,13 +20,14 @@
                 });
         }
 
-// saveQuizToJson('');
-//
-//         function saveQuizToJson(quiz) {
-//             $http.post('resources/json-data/results.json', '{David: test}')
-//                 .then(function(res) {
-//                     console.log(res);
-//                 });
-//         }
+        function getQuizData() {
+            return $http.get('resources/json-data/quiz.json')
+                .then(function(response) {
+                    return angular.fromJson(response.data);
+                })
+                .catch(function() {
+                    window.aler('Unable to load quiz data');
+                });
+        }
     }
 }(angular));

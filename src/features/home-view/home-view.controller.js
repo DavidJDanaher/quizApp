@@ -6,22 +6,23 @@
     angular.module('quiz.app')
         .controller('QuizHomeController', QuizHomeController);
 
-    function QuizHomeController($http, quizStateService) {
+    function QuizHomeController(quizDataService, quizStateService) {
         var vm = this;
 
         vm.setName = setName;
         vm.quizObj = {};
 
-        getQuizJson();
+        vm.$onInit = init;
+        vm.$onInit();
 
         function setName() {
             quizStateService.setUserName(vm.name);
         }
 
-        function getQuizJson() {
-            $http.get('resources/json-data/quiz.json')
+        function init() {
+            quizDataService.getQuizData()
                 .then(function(response) {
-                    vm.quizObj = response.data;
+                    vm.quizObj = response;
 
                     renderElements(vm.quizObj);
                 });
