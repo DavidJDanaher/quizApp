@@ -1,7 +1,7 @@
 <div class="page-background">
     <div class="text-wrapper standard-text">
         <h1 class="title-text" id="quiz-title"></h1>
-        <img class="main-image" src="https://media1.britannica.com/eb-media/08/178408-131-68C3BF1E.jpg"/>
+        <img class="main-image" src="{{homeVm.imageData.filePath}}" alt="{{homeVm.imageData.altText}}"/>
         <div id="quiz-introduction"></div>
         <div id="quiz-description"></div>
     </div>
@@ -13,7 +13,6 @@
             ng-change="homeVm.setName()"
             placeholder="Name"
             class="name-input title-text">
-
             <a href="#!/quiz">
                 <div ng-show="homeVm.name" class="name-input title-text">Take the Quiz</div>
             </a>

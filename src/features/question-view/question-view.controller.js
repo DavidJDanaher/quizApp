@@ -23,7 +23,7 @@
             if (quiz === undefined) {
                 location.assign('#!/home');
             }
-            
+
             vm.questions = quiz.questionList;
 
             goToQuestion(0);

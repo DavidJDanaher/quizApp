@@ -5,16 +5,15 @@
             <div class="question-number title-text">
                 <h1>{{ question.index + 1 }}</h1>
             </div>
-
             <div class="result-panel">
                 <div id="question-{{$index}}">{{ question.question }}</div>
                 <div class="question">
                     <span class="title-text">{{ question.answers[question.correct - 1] }}</span>
                     <span ng-if="question.userAnsweredCorrectly" >
-                        <img class="icon" src="resources/images/check_mark.png"/>
+                        <img class="icon" src="resources/images/check_mark.png" alt="check mark icon"/>
                     </span>
                     <span ng-if="!question.userAnsweredCorrectly">
-                        <img class="icon" src="resources/images/x-mark.png"/>
+                        <img class="icon" src="resources/images/x-mark.png" alt="x mark icon"/>
                     </span>
                 </div>
                 <div id="explanation-{{$index}}">{{ question.explanation }}</div>
